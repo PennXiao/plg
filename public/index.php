@@ -1,9 +1,10 @@
 <?php
 
-ini_set('display_errors', 1);
-error_reporting(-1);
+define('DEBUG', true);
+define('BASEDIR_', realpath('..\/'));
 
 
-$loader = require_once __DIR__.'/../vendor/autoload.php';
+require_once BASEDIR_.'/vendor/autoload.php';
 
-require __DIR__.'/../bootstrap/autoload.php';
+$app = require BASEDIR_.'/bootstrap/autoload.php';
+$app->send();

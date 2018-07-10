@@ -3,10 +3,11 @@ namespace App\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 
-class Controller
+class HomeController
 {
-    public function master(Request $request) 
+    public function index(Request $request) 
     {
+
         return new Response('Nope, this is not a leap year.');
     } 
 }
