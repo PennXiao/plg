@@ -1,25 +1,12 @@
 <?php
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\DependencyInjection\Reference;
-use Symfony\Component\HttpKernel;
-use Symfony\Component\Routing;
-use Symfony\Component\HttpFoundation\Response;
-
+// 路由
 include __DIR__.'/routes.php';
-
+// 服务器容器
 $container = include __DIR__.'/container.php';
-
-// 设置debug
+// 设置服务器常量
 $container->setParameter('debug', DEBUG);
-
-// 设置详情，编码
-$container->register('listener.response', HttpKernel\EventListener\ResponseListener::class)->setArguments(array('%charset%'));
-$container->setParameter('charset', 'UTF-8');
-
-// 控制路由中间件
-// $container->register('matcher', Routing\Matcher\UrlMatcher::class)->setArguments(array('%routes%', new Reference('context')));
-// $container->setParameter('routes', include __DIR__.'/routes.php');
-
+// 获取请求
 $request = Request::createFromGlobals();
 $response = $container->get('framework')->handle($request);
 return $response;
