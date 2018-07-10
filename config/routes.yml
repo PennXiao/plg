@@ -1,0 +1,12 @@
+# routes.yml
+route:
+    path:     /
+    defaults: { _controller: '\App\Controller\HomeController::index' }
+
+route1:
+    path:     /foo
+    defaults: { _controller: 'MyController::fooAction' }
+ 
+route2:
+    path:     /foo/bar
+    defaults: { _controller: 'MyController::foobarAction' }
