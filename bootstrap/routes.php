@@ -1,4 +1,5 @@
 <?php
+use Symfony\Component\Routing\Route;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\Routing\Loader\YamlFileLoader;
  
@@ -7,6 +8,12 @@ $locator = new FileLocator(array(BASEDIR_.'/config'));
 $loader = new YamlFileLoader($locator);
 $routes = $loader->load('routes.yml');
 
+//如果不存在路由则
+$routes->add('master', new Route('/',
+    array(
+        '_controller' => '\App\Controller\HomeController::home',
+    )
+)); 
 // use Symfony\Component\Routing\RouteCollection;
 // use Symfony\Component\Routing\Route;
 
@@ -15,8 +22,6 @@ $routes = $loader->load('routes.yml');
 //     array(
 //         '_controller' => '\App\Controller\HomeController::index',
 //     )
-// ));
-
-// // ...
+// )); 
 
 return $routes;

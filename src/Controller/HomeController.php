@@ -10,4 +10,9 @@ class HomeController
 
         return new Response('Nope, this is not a leap year.');
     } 
+    public function home(Request $request) 
+    {
+
+        return new Response('this is home action');
+    } 
 }
