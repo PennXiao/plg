@@ -22,7 +22,7 @@ $containerBuilder->register('listener.response', HttpKernel\EventListener\Respon
     ->setArguments(array('UTF-8'))
 ;
 $containerBuilder->register('listener.exception', HttpKernel\EventListener\ExceptionListener::class)
-    ->setArguments(array('Calendar\Controller\ErrorController::exceptionAction'))
+    ->setArguments(array('Plg\ErrorController::exceptionAction'))
 ;
 $containerBuilder->register('dispatcher', EventDispatcher\EventDispatcher::class)
     ->addMethodCall('addSubscriber', array(new Reference('listener.router')))
