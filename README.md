@@ -13,6 +13,11 @@
 ```
 ### 路由 ###
 
+官方文档 [Symfony/Routing](https://symfony.com/doc/current/routing.html "symfony路由组件") inline link.  
+
+路由的初始化在 **bootstrap/routes.php** 文件中调度
+
+在 **config/routes.yml** 文件中配置
 ### 钩子 ###
 
 ### 控制器 ###
