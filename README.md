@@ -15,11 +15,21 @@
 
 官方文档 [Symfony/Routing](https://symfony.com/doc/current/routing.html "symfony路由组件") inline link.  
 
-路由的初始化在 **bootstrap/routes.php** 文件中调度
+路由的初始化在 **bootstrap/routes.php** 中调度
 
 在 **config/routes.yml** 文件中配置
 ### 钩子 ###
 
+框架初始化时候会加载 **.env** 赋值给``$_ENV`` or ``$_SERVER`` 
+或者使用函数
+``` 
+getenv("APP_DEBUG") #使用本函数获取配置值或者使用全局变量
+
+``` 
+
 ### 控制器 ###
 
 ### 数据库与模型 ###
+
+
+
