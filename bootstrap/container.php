@@ -6,7 +6,12 @@ use Symfony\Component\HttpKernel;
 use Symfony\Component\Routing;
 use Symfony\Component\EventDispatcher;
 use Plg\Framework;
+use Plg\Database;
+
 $containerBuilder = new DependencyInjection\ContainerBuilder();
+
+$containerBuilder->register('database', Database::class);
+
 $containerBuilder->register('context', Routing\RequestContext::class);
 $containerBuilder->register('matcher', Routing\Matcher\UrlMatcher::class)
     ->setArguments(array($routes, new Reference('context')))

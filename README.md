@@ -29,7 +29,14 @@ getenv("APP_DEBUG") #使用本函数获取配置值或者使用全局变量
 
 ### 控制器 ###
 
+控制器语路由命名空间注意对应
+
+
 ### 数据库与模型 ###
 
+illuminate/database [illuminate/database](https://github.com/illuminate/database "数据库组件") inline link. 
 
+数据库的初始化在 **bootstrap/Plg/Database.php** 中调度
+
+官方文档 [laravel.com](https://laravel.com/docs/database "Laravel数据库") 
 
