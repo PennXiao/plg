@@ -15,10 +15,10 @@ $container = include __DIR__.'/container.php';
 // 设置服务器容器常量
 $container->setParameter('debug', getenv('APP_DEBUG'));
 
-// 设置运行Database
-$container->get('database')->setClien();
+// 设置框架初始化
+$container->get('plg.database')->setClien();
 
-// 获取请求
+// 运行
 $request = Request::createFromGlobals();
 $response = $container->get('framework')->handle($request);
 return $response;
