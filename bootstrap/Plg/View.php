@@ -9,7 +9,16 @@ class View{
 
 	public static function make( $str='index', $param=[]){
 		$loader = new \Twig_Loader_Filesystem(BASEDIR_.'/src/view');
-		$option['cache'] = getenv('APP_DEBUG')==true?false:BASEDIR_.'/tmp/cache/view';
+
+		
+		$option = [];//模板参数配置
+		if ( strtoupper($_ENV['APP_DEBUG']) === 'TRUE' ) {
+			#开发模式的配置
+		}else{
+			#生产模式的配置
+			$option['cache'] = BASEDIR_.'/tmp/cache/view';
+		}
+
         $twig = new \Twig_Environment($loader,$option);
         return $twig->render($str.'.view.html',$param);
 	}

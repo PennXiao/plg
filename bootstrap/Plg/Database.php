@@ -6,17 +6,17 @@ use Illuminate\Container\Container;
 
 class Database extends Manager
 {	
-	public static function setClien(){
+	public static function setClien(array $arr){
 		$thisDB = new Manager();
 		$thisDB->addConnection([
-		    'driver'    => 'mysql',
-		    'host'      => '192.168.1.160',
-		    'database'  => 'ga_debo',
-		    'username'  => 'root',
-		    'password'  => '123456',
-		    'charset'   => 'utf8',
-		    'collation' => 'utf8_general_ci',
-		    'prefix'    => '',
+		    'driver'    => $arr['DB_DRIVER'],
+		    'host'      => $arr['DB_HOST'],
+		    'database'  => $arr['DB_DATABASE'],
+		    'username'  => $arr['DB_USERNAME'],
+		    'password'  => $arr['DB_PASSWORD'],
+		    'charset'   => $arr['DB_CHARSET'],
+		    'collation' => $arr['DB_COLLATION'],
+		    'prefix'    => $arr['DB_PREFIX'],
 		]);
 		$thisDB->setEventDispatcher(new Dispatcher(new Container));
 		$thisDB->setAsGlobal();

@@ -5,6 +5,12 @@
  * @link 
  */
 
+//
+define("F_S_MEMORY",    memory_get_usage());
+//
+define("F_S_TIME",      microtime(true));
+
+
 //定义项目根目录
 define('BASEDIR_', realpath(__DIR__.'\..\/'));
 /**

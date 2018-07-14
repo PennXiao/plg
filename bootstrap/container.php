@@ -6,7 +6,7 @@ use Symfony\Component\HttpKernel;
 use Symfony\Component\Routing;
 use Symfony\Component\EventDispatcher;
 
-use Plg\StringResponseListener;
+use Plg\ResponseString;
 // use Plg\ErrorController;
 use Plg\Framework;
 use Plg\Database;
@@ -25,7 +25,7 @@ $containerBuilder->register('argument_resolver', HttpKernel\Controller\ArgumentR
  */
 
 #重载用户控制器返回对象为字符串
-$containerBuilder->register('listener.stringresponse', StringResponseListener::class);
+$containerBuilder->register('listener.stringresponse', ResponseString::class);
 #重载用户步骤的报错问题
 $containerBuilder->register('listener.exception', HttpKernel\EventListener\ExceptionListener::class)
     ->setArguments(array('Plg\ErrorController::exceptionAction'))
