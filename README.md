@@ -12,7 +12,7 @@ PHP version 7.2.*
 
 ### 部署框架步骤 ###
 ```
-# git clone git@github.com:PennXiao/plg.git
+# git clone https://github.com/PennXiao/plg.git
 
 # php composer.phar install
 	
